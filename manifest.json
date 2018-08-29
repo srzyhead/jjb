@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "京价保 - 京东价保助手",
   "short_name": "京价保",
-  "description": "京价保（京价宝）是自动为你申请京东价格保护，自动签到领京豆，自动领券的多功能京东助手",
+  "description": "京价保（京价宝）是自动为你申请京东价格保护，自动签到领京豆、钢镚的多功能京东助手",
   "version": "{{version}}",
   "background": {
     "page": "background.html",
@@ -40,5 +40,17 @@
   "web_accessible_resources": [
     "static/dialog-polyfill.js"
   ],
-  "permissions": ["*://*.jd.com/*", "*://*.jd.hk/*", "*://*.jdpay.com/*", "webRequest", "webRequestBlocking", "alarms", "tabs", "notifications"]
+  "permissions": [
+    "*://*.jd.com/*",
+    "*://*.jd.hk/*",
+    "webRequest", 
+    "webRequestBlocking", 
+    "alarms", 
+    "tabs",
+    "notifications"
+  ],
+  "optional_permissions": [
+    "*://*.jdpay.com/*",
+    "bookmarks"
+  ]
 }

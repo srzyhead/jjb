@@ -25,9 +25,10 @@ select {
     padding: 5px 10px;
 }
 .settings{
-    width: 46%;
+    width: 45.5%;
     float: left;
     background: #fbfbfb;
+    border-right: 1px solid #eee;
 }
 
 .settings .weui-navbar__item.weui-bar__item_on {
@@ -70,6 +71,7 @@ select {
 
 .other_actions{
     padding: 10px;
+    padding-bottom: 0;
 }
 
 .other_actions p{
@@ -84,10 +86,24 @@ select {
     margin-top: 10em;
 }
 
-.tips .switch-paymethod {
-    padding: 0 0.62em;
-    line-height: 1.8;
+.bottom-tips {
+    padding: 5px;
+}
+
+.other_actions h3{
+    font-size: 16px;
+}
+
+.recommendation{
+    height: 230px;
+    font-size: 12px;
+}
+
+.tips .weui-btn_mini {
+    padding: 0.1em .5em;
+    line-height: 1.4;
     margin-bottom: -7px;
+    font-size: 12px;
 }
 
 .reward_tips .newyear {
@@ -99,6 +115,10 @@ select {
 }
 
 .frequency_settings .weui-cell__bd i.today{
+    display: none;
+}
+
+.frequency_settings .weui-cell__bd i.job-state {
     display: none;
 }
 
@@ -162,6 +182,8 @@ select {
 
 #admissionTest .weui-dialog__bd{
     line-height: 1.6;
+    max-height: 300px;
+    overflow-x: hidden;
 }
 
 #admissionTest .weui-dialog__bd p{
@@ -296,18 +318,13 @@ select {
 
 .settings .page__desc{
     font-size: 12px;
-    height: 35px;
+    height: 31px;
+    line-height: 18px;
+    color: #666;
 }
 
 .settings .weui-tab{
     height: auto;
-}
-
-.tips.page__hd {
-    height: 45px;
-    overflow: hidden;
-    padding: 5px;
-    background-image: linear-gradient(0deg, #dadada69, #fffde817);
 }
 
 .tips .page__desc{
@@ -330,7 +347,7 @@ img.weui-tabbar__icon {
     padding: 10px;
     text-align: left;
     line-height: 2.2;
-    max-height: 320px;
+    max-height: 300px;
     overflow-y: auto;
 }
 
@@ -339,13 +356,25 @@ img.weui-tabbar__icon {
     padding: 10px 15px;
     text-align: left;
     line-height: 2.2;
-    max-height: 320px;
+    max-height: 300px;
     color: #5a5a5a;
     overflow-y: auto;
 }
 
 .loginNotice b{
    color: #2b902f;
+}
+
+#loginNotice .title{
+    background: #fbf3a5;
+    color: #ce7f66;
+    padding-top: 0.8em;
+}
+
+#loginNotice.state-alive .title {
+    background: #b9e684ad;
+    color: #2b902f;
+    padding-top: 0.8em;
 }
 
 #faqDialags .weui-dialog,
@@ -581,7 +610,15 @@ button.Button.messages-tab.Button--plain:focus {
     width: 33%;
 }
 
-.citic, .bankcomm{
+.openMobliePage{
+    cursor: pointer;
+}
+
+#openRecommendCard {
+  color: #2196F3;
+}
+
+.spd, .bankcomm{
     display: none;
 }
 
@@ -671,15 +708,108 @@ button.Button.messages-tab.Button--plain:focus {
     color: #ff1d1d;
 }
 
-.links {
-    margin: 0 15px;
-    margin-top: 10px;
+.bottom-box{
+    height: 55px;
+    overflow: hidden;
+    border-top: #d4d4d4;
+    background: #f7f7fa;
+    position: relative;
+}
+
+
+.bottom-box .avatar{
+        width: 30px;
+        position: absolute;
+        left: 10px;
+        bottom: 11px;
+        height: 30px;
+}
+
+.bottom-box .avatar .login-state {
+    -webkit-mask: url(../image/avatar.svg) no-repeat center;
+    -webkit-mask-size: 30px;
+    mask: url(../image/avatar.svg) no-repeat center;
+    mask-size: 30px;
+    width: 30px;
+    height: 30px;
+    color: #dcdcdc;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #cecece;
+}
+
+.bottom-box .avatar .login-state.alive{
+    background-color: #41bd2a;
+}
+
+.bottom-box .avatar .login-state.failed{
+    background-color: #f56c6c;
+}
+
+.bottom-box .avatar .login-state.warning {
+    background-color: #f7aa4d;
+}
+
+
+.bottom-box .links {
+    right: 10px;
+    position: absolute;
+    bottom: 10px;
 }
 
 .links .text-tips{
     color: #bbb;
     padding-bottom: 5px;
 }
+
+.tips .weui-btn{
+    display: none;
+}
+
+.showChangeLog{
+    cursor: pointer;
+}
+
+.offline-icon{
+    -webkit-mask: url(../image/offline.svg) no-repeat center;
+    -webkit-mask-size: 22px;
+    mask: url(../image/offline.svg) no-repeat center;
+    mask-size: 22px;
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    background-color: #666;
+    padding-right: 5px;
+    margin-bottom: -4px;
+}
+
+.online-icon{
+    -webkit-mask: url(../image/online.svg) no-repeat center;
+    -webkit-mask-size: 22px;
+    mask: url(../image/online.svg) no-repeat center;
+    mask-size: 22px;
+    width: 22px;
+    height: 22px;
+    background-color: #2b902f;
+    padding-right: 5px;
+    margin-bottom: -4px;
+    display: none;
+}
+
+.request-permissions-icon.weui-icon-warn {
+    color: #FFC107;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.state-alive .online-icon {
+    display: inline-block;
+}
+
+.state-alive .offline-icon {
+    display: none;
+}
+
 .el-tag--plus {
         border-color: #f7aa4d;
         background-color: #f9d2a3;
@@ -696,4 +826,52 @@ button.Button.messages-tab.Button--plain:focus {
 .help_btns .el-tag a{
     font-size: 14px;
     padding: 12px;
+}
+
+.text-tips.version{
+    padding-bottom: 0;
+}
+
+
+.loginNotice .detail {
+    display: none;
+    padding-top: 20px;
+}
+
+.loginNotice .detail h3 {
+    text-align: center;
+}
+
+.unknown .status-icon {
+    background-color: #ccc;
+}
+
+.alive .status-icon {
+    background-color: #289e2d;
+}
+
+.alive .status-text {
+    color: #289e2d;
+}
+
+.alive .weui-cell {
+    background: #e6ffcad4;
+}
+.failed .weui-cell {
+    background: #ffd3d3b5;
+}
+
+.failed .status-text {
+    color: #de4545;
+}
+
+#login i{
+    margin-top: -3px;
+}
+
+#know_more {
+    text-align: center;
+    padding-top: 10px;
+    color: #999;
+    cursor: pointer;
 }
